@@ -1,31 +1,31 @@
-function dispatchClick (item) {
-  item.dispatchEvent(new window.MouseEvent('mousedown', {
-    view: window,
-    bubbles: true,
-    cancelable: false
-  }));
+function dispatchClick(item) {
+    item.dispatchEvent(new window.MouseEvent('mousedown', {
+        view: window,
+        bubbles: true,
+        cancelable: false
+    }));
 }
 
 
-function makeActive (item) {
-  const chat = item.querySelector('.chat');
-  if (chat) {
-    dispatchClick(chat);
-  }
+function makeActive(item) {
+    const chat = item.querySelector('.chat');
+    if (chat) {
+        dispatchClick(chat);
+    }
 }
 
 
-function isItemActive (item) {
+function isItemActive(item) {
     const chat = item.querySelector('.chat');
     return chat && chat.classList.contains('active');
 }
 
 
-function getChatList () {
+function getChatList() {
     const chatListElem = document.querySelectorAll('.infinite-list-item');
     if (chatListElem.length > 0) {
         return Array.from(chatListElem).sort(function (a, b) {
-          return parseInt(b.style.zIndex, 10) - parseInt(a.style.zIndex, 10);
+            return parseInt(b.style.zIndex, 10) - parseInt(a.style.zIndex, 10);
         });
     }
 }
@@ -41,7 +41,7 @@ function navigateEmojiTabs(delta) {
     const emojiTabs = getEmojiTabs();
 
     let index = -1;
-    for(let i=0; i < emojiTabs.length; i++) {
+    for (let i = 0; i < emojiTabs.length; i++) {
         const item = emojiTabs[i];
         if (item.classList.contains('active')) {
             index = i + delta;
@@ -50,10 +50,10 @@ function navigateEmojiTabs(delta) {
     }
 
     if (index < 0) {
-      index = emojiTabs.length - 1;
+        index = emojiTabs.length - 1;
     }
     if (index >= emojiTabs.length) {
-      index = 0;
+        index = 0;
     }
 
     let target = emojiTabs[index];
@@ -65,7 +65,7 @@ function navigateConverstaion(delta) {
     const chatList = getChatList();
 
     let index = -1;
-    for(let i=0; i < chatList.length; i++) {
+    for (let i = 0; i < chatList.length; i++) {
         const item = chatList[i]
         if (isItemActive(item)) {
             index = i + delta;
@@ -105,27 +105,27 @@ function isKeyCode(keyCode, char) {
 }
 
 
-window.addEventListener('keyup', function(e) {
-    if(e.altKey) {
-      if (e.keyCode == 37) {
-        navigateEmojiTabs(-1);
+window.addEventListener('keyup', function (e) {
+    if (e.altKey) {
+        if (e.keyCode == 37) {
+            navigateEmojiTabs(-1);
 
-      } else if (e.keyCode == 39) {
-        navigateEmojiTabs(1);
+        } else if (e.keyCode == 39) {
+            navigateEmojiTabs(1);
 
-      } else if (e.keyCode == 40) {
-        navigateConverstaion(1);
+        } else if (e.keyCode == 40) {
+            navigateConverstaion(1);
 
-      } else if (e.keyCode == 38) {
-        navigateConverstaion(-1);
+        } else if (e.keyCode == 38) {
+            navigateConverstaion(-1);
 
-      } else if (isKeyCode(e.keyCode, 'k')) {
-        e.preventDefault();
-        searchChats();
+        } else if (isKeyCode(e.keyCode, 'k')) {
+            e.preventDefault();
+            searchChats();
 
-      } else if (isKeyCode(e.keyCode, 'j')) {
-        e.preventDefault();
-        showEmojis();
-      }
+        } else if (isKeyCode(e.keyCode, 'j')) {
+            e.preventDefault();
+            showEmojis();
+        }
     }
 })
