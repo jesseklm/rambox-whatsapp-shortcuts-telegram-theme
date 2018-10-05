@@ -1,7 +1,12 @@
-Whatsappium
------------
+# Whatsapp Web Shortcuts
 
-[Firefox](https://addons.mozilla.org/en-US/firefox/addon/whatsapp-ium/) and [Chrome](https://chrome.google.com/webstore/detail/whatsappium/eedgndchicdbbbejcpalinoieoegbfap) extension that allows you to use Keyboard shortcuts on https://web.whatsapp.com!
+A clone of [Whatsappium](https://github.com/MichaelAquilina/Whatsappium), with updated selectors
+
+My own use case:
+
+- Used with Rambox, which allows custom Javascript Injection
+
+-----------
 
 Currently supports:
 
