@@ -84,7 +84,7 @@ function navigateConverstaion(delta) {
 
 
 function searchChats() {
-    const inputSearch = document.querySelector('input.input-search');
+    const inputSearch = document.querySelector('input.jN-F5');
     if (inputSearch) {
         inputSearch.focus();
     }
