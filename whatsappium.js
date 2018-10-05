@@ -92,7 +92,7 @@ function searchChats() {
 
 
 function showEmojis() {
-    const buttonEmoji = document.querySelector('button.btn-emoji');
+    const buttonEmoji = document.querySelector('span[data-icon=smiley]');
     if (buttonEmoji) {
         buttonEmoji.click();
     }
@@ -105,27 +105,34 @@ function isKeyCode(keyCode, char) {
 }
 
 
-window.addEventListener('keyup', function (e) {
-    if (e.altKey) {
-        if (e.keyCode == 37) {
-            navigateEmojiTabs(-1);
+const intervalId = setInterval(() => {
+    bindShortcuts();
+}, 5000);
 
-        } else if (e.keyCode == 39) {
-            navigateEmojiTabs(1);
-
-        } else if (e.keyCode == 40) {
-            navigateConverstaion(1);
-
-        } else if (e.keyCode == 38) {
-            navigateConverstaion(-1);
-
-        } else if (isKeyCode(e.keyCode, 'k')) {
-            e.preventDefault();
-            searchChats();
-
-        } else if (isKeyCode(e.keyCode, 'j')) {
-            e.preventDefault();
-            showEmojis();
+function bindShortcuts() {
+    window.addEventListener('keyup', function (e) {
+        console.log('Keyboard input');
+        if (e.altKey) {
+            if (e.keyCode == 37) {
+                navigateEmojiTabs(-1);
+    
+            } else if (e.keyCode == 39) {
+                navigateEmojiTabs(1);
+    
+            } else if (e.keyCode == 40) {
+                navigateConverstaion(1);
+    
+            } else if (e.keyCode == 38) {
+                navigateConverstaion(-1);
+    
+            } else if (isKeyCode(e.keyCode, 'k')) {
+                e.preventDefault();
+                searchChats();
+    
+            } else if (isKeyCode(e.keyCode, 'j')) {
+                e.preventDefault();
+                showEmojis();
+            }
         }
-    }
-})
+    });
+}
