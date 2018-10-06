@@ -5,6 +5,7 @@
 1. Install Rambox
 2. Apply the whatsappium.js & dark_transparent_whatsapp.js to whatsapp service
 3. Apply the web_telegram_dark.js to telegram service
+4. (optional) Feel free to change the theme script to match your own needs
 
 ## Support of shortcuts in whatsappium.js
 
