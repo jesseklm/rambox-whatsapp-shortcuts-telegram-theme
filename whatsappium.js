@@ -22,7 +22,7 @@ function getChatList() {
     const chatListElem = document.querySelectorAll('._2wP_Y');
     if (chatListElem.length > 0) {
         return Array.from(chatListElem).sort(function (a, b) {
-            return parseInt(b.style.zIndex, 10) - parseInt(a.style.zIndex, 10);
+            return parseInt(a.style.transform.match(/\(.*\)/i)[0].match(/\d+/)[0]) - parseInt(b.style.transform.match(/\(.*\)/i)[0].match(/\d+/)[0])
         });
     }
 }
