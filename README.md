@@ -23,6 +23,8 @@ Currently supports:
 - Telegram
 ![Telegram Screenshot](https://user-images.githubusercontent.com/6096534/46568901-47f3f500-c97f-11e8-8e12-deb568946600.png "Telegram Screenshot")
 
+Note: the theme screenshots might look different from time to time as I might change the theme script without updating the screenshot here.
+
 ## TODO
 
 * [ ] Fix some bugs in whatsappium, which cause some navigation problems in whatsapp
