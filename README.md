@@ -16,6 +16,13 @@ Currently supports:
 * `Alt + J` - Open Emoji window
 * `Alt + Left` + `Alt + Right` - Navigate Emoji Tabs when open
 
+## Screenshots of new theme
+
+- Whatsapp
+![Whatsapp Screenshot](https://user-images.githubusercontent.com/6096534/46568917-87badc80-c97f-11e8-90a1-03016897d2f3.png "Whatsapp Screenshot")
+- Telegram
+![Telegram Screenshot](https://user-images.githubusercontent.com/6096534/46568901-47f3f500-c97f-11e8-8e12-deb568946600.png "Telegram Screenshot")
+
 ## TODO
 
 * [ ] Fix some bugs in whatsappium, which cause some navigation problems in whatsapp
