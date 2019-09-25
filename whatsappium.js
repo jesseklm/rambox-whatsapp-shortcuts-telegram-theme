@@ -7,19 +7,19 @@ function dispatchClick(item) {
 }
 
 function makeActive(item) {
-    const chat = item.querySelector('._2EXPL');
+    const chat = item.querySelector('._2UaNq');
     if (chat) {
         dispatchClick(chat);
     }
 }
 
 function isItemActive(item) {
-    const chat = item.querySelector('._2EXPL');
-    return chat && chat.classList.contains('_1f1zm');
+    const chat = item.querySelector('._2UaNq');
+    return chat && chat.classList.contains('_3mMX1');
 }
 
 function getChatList() {
-    const chatListElem = document.querySelectorAll('._2wP_Y');
+    const chatListElem = document.querySelectorAll('.X7YrQ');
     if (chatListElem.length > 0) {
         return Array.from(chatListElem).sort(function (a, b) {
             return parseInt(a.style.transform.match(/\(.*\)/i)[0].match(/\d+/)[0]) - parseInt(b.style.transform.match(/\(.*\)/i)[0].match(/\d+/)[0])
@@ -29,7 +29,7 @@ function getChatList() {
 
 function getEmojiTabs() {
     // const emojiPanel = document.querySelector('div.emoji-panel');
-    return document.querySelectorAll('.l90LN');
+    return document.querySelectorAll('._2Bfgm');
 }
 
 function navigateEmojiTabs(delta) {
@@ -38,7 +38,7 @@ function navigateEmojiTabs(delta) {
     let index = -1;
     for (let i = 0; i < emojiTabs.length; i++) {
         const item = emojiTabs[i];
-        if (item.classList.contains('_2DzXb')) {
+        if (item.classList.contains('_2wn58')) {
             index = i + delta;
             break;
         }
@@ -55,12 +55,12 @@ function navigateEmojiTabs(delta) {
     target.click();
 }
 
-function navigateConverstaion(delta) {
+function navigateConversation(delta) {
     const chatList = getChatList();
 
     let index = -1;
     for (let i = 0; i < chatList.length; i++) {
-        const item = chatList[i]
+        const item = chatList[i];
         if (isItemActive(item)) {
             index = i + delta;
             break;
@@ -68,7 +68,7 @@ function navigateConverstaion(delta) {
     }
 
     // If no chat is selected, default to moving to the top chat
-    if (index == -1 || index >= chatList.length) {
+    if (index === -1 || index >= chatList.length) {
         index = 0;
     }
 
@@ -77,7 +77,7 @@ function navigateConverstaion(delta) {
 }
 
 function searchChats() {
-    const inputSearch = document.querySelector('input.jN-F5');
+    const inputSearch = document.querySelector('input._2zCfw');
     if (inputSearch) {
         inputSearch.focus();
     }
@@ -91,8 +91,8 @@ function showEmojis() {
 }
 
 function isKeyCode(keyCode, char) {
-    const keyChar = String.fromCharCode(keyCode)
-    return keyChar == char || keyChar == char.toUpperCase();
+    const keyChar = String.fromCharCode(keyCode);
+    return keyChar === char || keyChar === char.toUpperCase();
 }
 
 const intervalId = setInterval(() => {
@@ -109,24 +109,23 @@ function bindShortcuts() {
 }
 
 function isWhatsappPageReady() {
-    const inputSearch = document.querySelector('input.jN-F5');
-    if (inputSearch) return true;
-    else return false;
+    const inputSearch = document.querySelector('input._2zCfw');
+    return !!inputSearch;
 }
 
 function handleKeyUp(e) {
     console.log('Keyboard input new');
     if (e.altKey) {
-        if (e.keyCode == 37) {
+        if (e.keyCode === 37) {
             navigateEmojiTabs(-1);
-        } else if (e.keyCode == 39) {
+        } else if (e.keyCode === 39) {
             navigateEmojiTabs(1);
-        } else if (e.keyCode == 40) {
-            console.log('navigateConverstaion(1)');
-            navigateConverstaion(1);
-        } else if (e.keyCode == 38) {
-            console.log('navigateConverstaion(-1)');
-            navigateConverstaion(-1);
+        } else if (e.keyCode === 40) {
+            console.log('navigateConversation(1)');
+            navigateConversation(1);
+        } else if (e.keyCode === 38) {
+            console.log('navigateConversation(-1)');
+            navigateConversation(-1);
         } else if (isKeyCode(e.keyCode, 'k')) {
             e.preventDefault();
             searchChats();
