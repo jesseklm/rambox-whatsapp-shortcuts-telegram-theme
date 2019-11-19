@@ -24,7 +24,7 @@ function bindShortcuts() {
 }
 
 async function handleReply(e) {
-    if (e.target.closest('.im_history_message_wrap')) {
+    if (e.target.closest('.im_history_message_wrap') && e.altKey) {
         await sleep(50);
         $('.btn-primary.im_edit_reply_btn')[0].click()
     }
