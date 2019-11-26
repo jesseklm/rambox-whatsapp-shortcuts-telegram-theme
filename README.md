@@ -17,6 +17,11 @@ Currently supports:
 * `Alt + J` - Open Emoji window
 * `Alt + Left` + `Alt + Right` - Navigate Emoji Tabs when open
 
+## Support of shortcuts in web_telegram_shortcuts.js
+
+- `Shift + D` - Download attachment when opening as preview
+- `Alt + Click` - Reply to a message when clicking on a message
+
 ## Screenshots of new theme
 
 - Whatsapp
